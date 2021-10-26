@@ -72,21 +72,6 @@ namespace ConnectionManager
         private static extern int htons(int netshort);
 
         /// <summary> 
-        /// Testexample 
-        /// </summary> 
-        public static void TEST()
-        {
-            Console.WriteLine("Not Working Yet!!!");
-            //string[] ret = Connections(State.All);
-            //foreach (string con in ret) if (con.IndexOf("192.168.0.101") > -1) System.Diagnostics.Debug.WriteLine(con);
-            //System.Diagnostics.Debug.WriteLine("----------------------------");
-            //CloseRemotePort(1863);
-            //CloseRemotePort(80);
-            //ret = Connections(State.All);
-            //foreach (string con in ret) if (con.IndexOf("192.168.0.101") > -1) System.Diagnostics.Debug.WriteLine(con);
-        }
-
-        /// <summary> 
         /// Close all connection to the remote IP 
         /// </summary> 
         /// <param name="IP">IPen på remote PC</param> 
