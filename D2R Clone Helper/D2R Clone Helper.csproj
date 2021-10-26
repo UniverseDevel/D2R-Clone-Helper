@@ -103,6 +103,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="annihilus.ico" />
+    <None Include="bin\Release\WindowsFirewallHelper.dll" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

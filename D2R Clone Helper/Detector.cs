@@ -19,7 +19,8 @@ namespace D2R_Clone_Helper
         internal static Dictionary<string, ConnectionInfo> activeConnectionList = new Dictionary<string, ConnectionInfo>();
         internal static Dictionary<string, IFirewallRule> blockedConnectionList = new Dictionary<string, IFirewallRule>();
         internal static Dictionary<string, ConnectionData> connectionList = new Dictionary<string, ConnectionData>();
-        
+        internal static Dictionary<string, List<ConnectionInfo>> allConnectionList = new Dictionary<string, List<ConnectionInfo>>();
+
         internal string keyPath = @"SOFTWARE";
 
         internal class ConnectionData
@@ -289,6 +290,7 @@ namespace D2R_Clone_Helper
             Regex reg = new Regex("\\s+", RegexOptions.Compiled);
 
             Dictionary<string, ConnectionInfo> activeConnectionListNew = new Dictionary<string, ConnectionInfo>();
+            Dictionary<string, List<ConnectionInfo>> allConnectionListNew = new Dictionary<string, List<ConnectionInfo>>();
             string line;
             while ((line = process.StandardOutput.ReadLine()) != null)
             {
@@ -314,6 +316,14 @@ namespace D2R_Clone_Helper
                             && !ci.RemoteIP.Equals(IPAddress.Parse("127.0.0.1"))
                         )
                         {
+                            if (!allConnectionListNew.ContainsKey(ci.RemoteIP.ToString()))
+                            {
+                                allConnectionListNew.Add(ci.RemoteIP.ToString(), new List<ConnectionInfo>() { ci });
+                            }
+                            else
+                            {
+                                allConnectionListNew[ci.RemoteIP.ToString()].Add(ci);
+                            }
                             if (!activeConnectionListNew.ContainsKey(ci.RemoteIP.ToString()))
                             {
                                 activeConnectionListNew.Add(ci.RemoteIP.ToString(), ci);
@@ -331,6 +341,7 @@ namespace D2R_Clone_Helper
             process.Close();
 
             activeConnectionList = activeConnectionListNew;
+            allConnectionList = allConnectionListNew;
         }
 
         internal static IPAddress parseIP(string value)

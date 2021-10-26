@@ -59,5 +59,15 @@ namespace D2R_Clone_Helper.Properties {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] WindowsFirewallHelper {
+            get {
+                object obj = ResourceManager.GetObject("WindowsFirewallHelper", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
     }
 }
