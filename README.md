@@ -1,6 +1,6 @@
 # D2R-Clone-Helper
 
-Detect connections with remote addresses opened by D2R process.
+Detect connections with remote addresses opened by D2R process. Win10+ only.
 
 Features:
 
