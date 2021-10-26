@@ -10,7 +10,7 @@ Features:
 - Write notes next to each IP address
 - Add manually your own IP addresses
 
-Precompiled binary and libs can be found here: https://github.com/UniverseDevel/D2R-Clone-Helper/blob/master/D2R%20Clone%20Helper/bin/Release/D2R%20Clone%20Helper.zip
+Precompiled binary can be found here: https://github.com/UniverseDevel/D2R-Clone-Helper/blob/master/D2R%20Clone%20Helper/bin/Release/D2R%20Clone%20Helper.exe
 
 It is kinda spagetty code so there might be some bugs. I will squash them when I get some sleep and find some more time.
 
