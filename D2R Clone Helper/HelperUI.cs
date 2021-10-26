@@ -193,6 +193,7 @@ namespace D2R_Clone_Helper
                 blockButton.Enabled = false;
                 deleteButton.Enabled = false;
                 descTextBox.Enabled = false;
+                blockButton.Visible = true;
                 unblockButton.Visible = false;
 
                 descTextBox.Text = String.Empty;
